@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/styles/reset.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./assets/styles/styles.css" />
+        <title>HN_JV230425_LeMinhTam</title>
+    </head>
+    <body>
+        <div class="app-container">
+            <div class="form-modal hidden">
+                <div class="over-lay"></div>
+                <form action="" class="form hidden">
+                    <div class="close-modal">
+                        <i class="fa-solid fa-rectangle-xmark"></i>
+                    </div>
+                    <div class="form-item">
+                        <label for="product-id" class="form-label"
+                            >Product ID</label
+                        >
+                        <input
+                            name="product-id"
+                            type="text"
+                            class="form-control"
+                            id="product-id"
+                        />
+                    </div>
+                    <div class="form-item">
+                        <label for="product-name" class="form-label"
+                            >Product Name</label
+                        >
+                        <input
+                            name="product-name"
+                            type="text"
+                            class="form-control"
+                            id="product-name"
+                        />
+                    </div>
+                    <div class="form-item">
+                        <label for="import-price" class="form-label"
+                            >Import Price</label
+                        >
+                        <input
+                            name="import-price"
+                            type="number"
+                            class="form-control"
+                            id="import-price"
+                        />
+                    </div>
+                    <div class="form-item">
+                        <label for="export-price" class="form-label"
+                            >Export Price</label
+                        >
+                        <input
+                            name="export-price"
+                            type="number"
+                            class="form-control"
+                            id="export-price"
+                        />
+                    </div>
+                    <div class="form-item">
+                        <label for="import-date" class="form-label"
+                            >Import Date</label
+                        >
+                        <input
+                            name="import-date"
+                            type="date"
+                            class="form-control"
+                            id="import-date"
+                        />
+                    </div>
+                    <div class="form-item">
+                        <label for="size" class="form-label">Size</label>
+                        <div class="form-checkbox">
+                            <input
+                                name="size-x"
+                                type="checkbox"
+                                class="form-control"
+                                id="size-x"
+                                value="X"
+                            />
+                            <label for="size-x" class="form-label">X</label>
+                            <input
+                                name="size-xl"
+                                type="checkbox"
+                                class="form-control"
+                                id="size-xl"
+                                value="XL"
+                            />
+                            <label for="size-xl" class="form-label">XL</label>
+                            <input
+                                name="size-l"
+                                type="checkbox"
+                                class="form-control"
+                                id="size-l"
+                                value="L"
+                            />
+                            <label for="size-l" class="form-label">L</label>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="gender" class="form-label">Type</label>
+                        <input
+                            type="radio"
+                            class="form-control"
+                            id="male"
+                            value="Male"
+                            name="gender"
+                            checked
+                        />
+                        <label for="male" class="form-label">Male</label>
+                        <input
+                            type="radio"
+                            class="form-control"
+                            id="female"
+                            value="Female"
+                            name="gender"
+                        />
+                        <label for="female" class="form-label">Female</label>
+                    </div>
+                    <div class="form-item">
+                        <label for="desc" class="form-label">Description</label>
+                        <textarea
+                            name="desc"
+                            id="desc"
+                            cols="30"
+                            rows="10"
+                            class="form-control"
+                        ></textarea>
+                    </div>
+                    <input
+                        type="button"
+                        class="button"
+                        id="create-product"
+                        value="Create"
+                    />
+                    <input
+                        type="button"
+                        class="button"
+                        id="update-product"
+                        value="Update"
+                    />
+                </form>
+            </div>
+            <div class="form-table">
+                <h2 class="form-table__heading">List Product</h2>
+                <form action="" class="form-table__search">
+                    <div class="form-item">
+                        <label for="search" class="form-label"
+                            >Product Name</label
+                        >
+                        <input type="search" id="search" class="form-search" />
+                        <input
+                            id="search-btn"
+                            type="submit"
+                            class="form-submit"
+                            value="search"
+                        />
+                    </div>
+                    <div class="form-item">
+                        <i class="open-modal fa-solid fa-square-plus"></i>
+                    </div>
+                </form>
+                <table class="table-list">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Import Price</th>
+                            <th>Export Price</th>
+                            <th>Import Date</th>
+                            <th>Size</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-delete hidden">
+            <div class="modal-content">
+                <div class="modal-content__close">
+                    <i class="fa-solid fa-rectangle-xmark"></i>
+                </div>
+                <p class="modal-content__question">
+                    Do you want delete product
+                </p>
+                <p class="modal-content__delete">123</p>
+                <div class="modal-content__control">
+                    <button class="btn btn-yes">Yes</button>
+                    <button class="btn btn-no">NO</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./assets/script/app.js"></script>
+</html>
